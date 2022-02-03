@@ -1,12 +1,13 @@
-database = [];
-
 var fs = require("fs");
 var http = require("http");
+var express = require("express");
 http.createServer(function (req, res) {
     res.writeHead(200, {'Content-Type': 'text/html'});
     res.end('Hello World!');
   }).listen(8080);
 
+var jsondata = fs.readFileSync('database.json')
+var database = JSON.parse(jsondata);
 var i = 0;
 
 function Login(){
