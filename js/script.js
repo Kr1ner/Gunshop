@@ -1,12 +1,18 @@
-var fs = require("fs");
-var http = require("http");
-var express = require("express");
+var fs = require('fs');
+var http = require('http');
 http.createServer(function (req, res) {
     res.writeHead(200, {'Content-Type': 'text/html'});
     res.end('Hello World!');
   }).listen(8080);
 
-var jsondata = fs.readFileSync('database.json')
+var jsondata = fs.readFileSync('database.json','utf-8',(err,jsonString)=>{
+    if(err){
+        console.log(err);
+    }
+    else{
+        console.log(jsonString);
+    }
+})
 var database = JSON.parse(jsondata);
 var i = 0;
 
@@ -20,6 +26,7 @@ function addNewUser(){
     var pwd = document.getElementById("pwd").value;
     if(nme !="" && pwd !=""){
         let userData={
+            index = i,
             username:nme,
             password:pwd
         }
