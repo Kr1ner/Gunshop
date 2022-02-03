@@ -12,3 +12,6 @@ http.createServer(function (req, res) {
         res.end();
     })
   }).listen(8080);
+
+var jsondatabase = fs.readFile(database.json);
+var database = JSON.parse(jsondatabase);
