@@ -1,39 +1,14 @@
-var fs = require('fs');
 var http = require('http');
+var fs = require('fs');
 http.createServer(function (req, res) {
     res.writeHead(200, {'Content-Type': 'text/html'});
-    res.end('Hello World!');
-  }).listen(8080);
-
-var jsondata = fs.readFileSync('database.json','utf-8',(err,jsonString)=>{
-    if(err){
-        console.log(err);
-    }
-    else{
-        console.log(jsonString);
-    }
-})
-var database = JSON.parse(jsondata);
-var i = 0;
-
-function Login(){
-    var nme = document.getElementById("username").value;
-    var pwd = document.getElementById("pwd").value;
-}
-
-function addNewUser(){
-    var nme = document.getElementById("username").value;
-    var pwd = document.getElementById("pwd").value;
-    if(nme !="" && pwd !=""){
-        let userData={
-            index = i,
-            username:nme,
-            password:pwd
+    fs.readFile('../index.html',null,function(error,data){
+        if(error){
+            res.writeHead(404);
+            res.writeFile('File Not Found!');
+        } else{
+            res.write(data);
         }
-        database.push(userData);
-        fs.writeFile(database.json,JSON.stringify(database));
-    }
-    else{
-        document.getElementById("errMsg").innerHTML = "Please enter your caredentials!";
-    }
-}
+        res.end();
+    })
+  }).listen(8080);
