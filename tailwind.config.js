@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {},
+    fontFamily:{
+      'first':'Montserrat,sans-serif',
+      'secondary':'Open Sans, sans-serif'
+    }
   },
   plugins: [],
 }
