@@ -1,7 +1,9 @@
 import Home from './Home.jsx'
 import Gallery from './Gallery.jsx'
+import Shop from './Shop.jsx'
 import NavBar from './NavBar.jsx'
-import { BrowserRouter,Routes,Route,Link } from 'react-router-dom'
+import Footer from './Footer.jsx'
+import { BrowserRouter,Routes,Route } from 'react-router-dom'
 import background from '/src/assets/gunstore_background.png'
 
 
@@ -13,7 +15,9 @@ function App() {
     <Routes>
       <Route path="/" element={<Home/>}></Route>
       <Route path="/gallery" element={<Gallery/>}></Route>
+      <Route path="/shop" element={<Shop/>}></Route>
     </Routes>
+    <Footer/>
   </BrowserRouter>
   </div>
   )
