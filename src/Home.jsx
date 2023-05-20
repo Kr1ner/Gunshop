@@ -11,7 +11,7 @@ export default function Home(){
     }
     return(
        <div id='home-page' className="w-screen flex flex-row justify-center">
-        <div id='display-section' className="w-4/5 h-screen flex flex-row items-center justify-between -mt-32">
+        <div id='display-section' className="w-4/5 h-screen flex flex-row items-center justify-between -mt-[7vw]">
             <u className="no-underline">
                 <h1 className="text-slate-200 font-first font-black text-[3.3vw]">We don't just sell guns,<br /> we sell peace of mind.</h1>
                 <p className="text-[1.1vw] text-gray-300">Welcome to GunStore, your premier destination for all your firearm needs.<br /> Whether you're an avid hunter, a sport shooter, or a responsible gun owner<br /> seeking to protect yourself and your loved ones, we are here to provide you <br/>with a wide selection of high-quality firearms and accessories. </p>
